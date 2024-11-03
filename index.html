@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+    <title>tommy.developer</title>
+    <style>
+        /* Mengatur tata letak umum */
+        body {
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            height: 100vh;
+            background-color: white;
+            color: #333; /* Ubah warna teks agar lebih kontras */
+            text-align: center;
+        }
+
+        .profile-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+        }
+        
+        .profile-name .material-symbols-outlined {
+            font-size: 15px;
+            color: white;
+            margin-left: 0px;
+       background-color: #007bff; 
+       border-radius: 50%; }
+
+        input[type="file"] {
+            display: block; /* Menjadikan elemen block */
+            margin: 20px; /* Mengatur margin atas dan bawah, centering secara horizontal */
+            color: black; /* Mengatur warna teks */
+            width: 88%; /* Lebar input file */
+            padding: 6px 40px; /* Padding di dalam input file */
+            border-radius: 50px; /* Border radius lebih halus */
+            box-shadow: 0 1px 5px rgb(0, 0, 0); /* Bayangan */
+            border: 0px solid #ccc; /* Border dengan warna gray */
+            background-color: #fff; /* Warna latar belakang */
+            text-align: center; /* Teks di dalam input file */
+            position: relative; /* Mengatur posisi relatif jika diperlukan */
+            z-index: 1; /* Mengatur z-index jika ada tumpang tindih */
+            box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar total */
+        }
+
+        /* Kontainer slider dan tombol - + */
+        .slider-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 0;
+        }
+
+        /* Tombol - dan + */
+        .slider-button {
+            padding: 5px 0px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 35px; /* Ukuran tombol bulat */
+            height: 35px; /* Ukuran tombol bulat */
+            font-size: 17px; /* Ukuran font di dalam tombol */
+            cursor: pointer;
+            margin: 0 8px; /* Jarak antar tombol */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Label di atas slider */
+        .slider-label {
+            position: absolute;
+            top: -04px; /* Atur jarak label dari slider */
+            text-align: center;
+            font-size: 10px;
+            color: black;
+            width: 100%;
+            left: 0;
+        }
+
+        /* Slider */
+        input[type="range"] {
+            width: 210px; /* Panjang slider */
+            height: 15px;
+            background: #ddd;
+            outline: none;
+            border-radius: 50px; /* Menjadikan slider berbentuk bulat */
+            overflow: hidden;
+        }
+
+        input[type="range"]::-moz-range-thumb:hover {
+            background-color: #21a1f1; /* Warna saat hover */
+        }
+
+        #ascii-output {
+            margin: 8;
+            white-space: pre-wrap;
+            font-family: monospace;
+            line-height: 0.6; /* Atur kerapatan baris */
+            background-color: white;
+            padding: 0;
+            border-radius: 0;
+            overflow: hidden;
+            height: 38vh; /* Tinggi penuh layar */
+            width: 96vw; /* Lebar penuh layar */
+            box-shadow: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(1vh); 
+            box-shadow: 0 1px 5px rgb(0, 0, 0)
+            /* Ukuran font disesuaikan dengan tinggi layar */
+        }
+
+        /* Tombol Generate ASCII */
+        button {
+            padding: 8px 100px;
+            margin-top: 20px;
+            font-size: 1em;
+            color: black;
+            background-color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 1px 5px rgb(0, 0, 0)
+;
+        }
+/* Tombol Copy dan Ambil Gambar */
+.copy-button,
+.screenshot-button {
+    padding: 8px 130px; /* Sesuaikan ukuran tombol */
+    margin-top: 20px; /* Jarak atas */
+    font-size: 1em;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+                box-shadow: 0 1px 5px rgb(0, 0, 0)
+}
+
+.copy-button:hover,
+.screenshot-button:hover {
+    background-color: #007bff;
+}
+
+        button:hover {
+            background-color: #007bff;
+        }
+
+        footer {
+            margin-top: 15px;
+            font-size: 10px;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <p class="profile-name">Tommy Developer
+        <span class="material-symbols-outlined">check_circle</span>
+    </p>
+        <pre id="ascii-output"></pre>
+    <input type="file" id="image-input" accept="image/*" />
+    <!-- Slider Width dengan tombol - dan + -->
+    <div class="slider-container">
+        <div class="slider-label">
+            <label for="width-slider"> Width: <span id="width-value">100%</span></label>
+        </div>
+        <button class="slider-button" onclick="adjustSlider('width-slider', -5)">-</button>
+        <input type="range" id="width-slider" min="1" max="100" value="50" />
+        <button class="slider-button" onclick="adjustSlider('width-slider', 5)">+</button>
+    </div>
+
+    <!-- Slider Height dengan tombol - dan + -->
+    <div class="slider-container">
+        <div class="slider-label">
+            <label for="height-slider">Height: <span id="height-value">100%</span></label>
+        </div>
+        <button class="slider-button" onclick="adjustSlider('height-slider', -5)">-</button>
+        <input type="range" id="height-slider" min="1" max="100" value="50" />
+        <button class="slider-button" onclick="adjustSlider('height-slider', 5)">+</button>
+    </div>
+
+    <button onclick="generateASCII()">Generate ASC</button>
+    <button class="copy-button" onclick="copyText()">Copy</button>
+    <button onclick="takeScreenshot()">Ambil Gambar</button>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <footer>Design Tommy | Versi 1.0</footer>
+    <script>
+        const asciiChars = "@%#*+=-:. ";
+
+        // Fungsi untuk mengatur nilai slider dengan tombol - dan +
+        function adjustSlider(sliderId, change) {
+            const slider = document.getElementById(sliderId);
+            let newValue = parseInt(slider.value) + change;
+            if (newValue >= slider.min && newValue <= slider.max) {
+                slider.value = newValue;
+                document.getElementById(sliderId === 'width-slider' ? 'width-value' : 'height-value').textContent = newValue + "%";
+            }
+        }
+
+        // Fungsi untuk konversi gambar ke ASCII
+        function generateASCII() {
+            const fileInput = document.getElementById('image-input').files[0];
+            if (!fileInput) {
+                alert("Please upload an image first.");
+                return;
+            }
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            const asciiOutput = document.getElementById('ascii-output');
+            const img = new Image();
+            img.src = URL.createObjectURL(fileInput);
+            img.onload = () => {
+                const widthPercent = document.getElementById('width-slider').value;
+                const heightPercent = document.getElementById('height-slider').value;
+                const originalWidth = img.width;
+                const originalHeight = img.height;
+                const width = Math.floor((widthPercent / 100) * originalWidth);
+                const height = Math.floor((heightPercent / 100) * originalHeight * 0.55);
+                canvas.width = width;
+                canvas.height = height;
+                ctx.drawImage(img, 0, 0, width, height);
+                const imgData = ctx.getImageData(0, 0, width, height);
+                const pixels = imgData.data;
+                let asciiArt = '';
+                for (let y = 0; y < height; y++) {
+                    for (let x = 0; x < width; x++) {
+                        const index = (y * width + x) * 4;
+                        const avg = (pixels[index] + pixels[index + 1] + pixels[index + 2]) / 3;
+                        const charIndex = Math.floor((avg / 255) * (asciiChars.length - 1));
+                        asciiArt += asciiChars.charAt(charIndex);
+                    }
+                    asciiArt += '\n';
+                }
+                asciiOutput.textContent = asciiArt;
+            };
+        }
+
+        // Fungsi untuk menyalin teks dari ascii-output
+        function copyText() {
+            const asciiOutput = document.getElementById('ascii-output').textContent;
+            navigator.clipboard.writeText(asciiOutput).then(() => {
+                alert("ASCII Art copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy text: " + err);
+            });
+        }
+
+        // Fungsi untuk mengambil screenshot dari ascii-output
+        function takeScreenshot() {
+            const asciiOutput = document.getElementById('ascii-output');
+            html2canvas(asciiOutput).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL();
+                link.download = 'tommy_desingn.png';
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>
