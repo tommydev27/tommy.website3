@@ -14,13 +14,16 @@
             color: #333;
              padding: 2px 0px;
             text-align: center;
-
+            box-shadow: 0 0px 5px rgb(119, 136, 153);
+            border-radius: 5px
         }
         .profile-name {
             font-size: 16px;
             font-weight: bold;
             color: #333;
-            margin-top: 18px;
+            margin-top: 5px; /* Atur sesuai keinginan */
+            margin-bottom: 5px; /
+            
         }
         .profile-name .material-symbols-outlined {
             font-size: 15px;
@@ -36,7 +39,7 @@
             width: 88%;
             padding: 6px 20px;
             border-radius: 50px;
-            box-shadow: 0 1px 5px rgb(0, 0, 0);
+            box-shadow: 0 1px 5px rgb(119, 136, 153);
             background-color: #fff;
             text-align: center;
             position: relative;
@@ -100,32 +103,32 @@
             align-items: center;
             justify-content: center;
             font-size: calc(1vh);
-            box-shadow: 0 1px 5px rgb(0, 0, 0);
+            box-shadow: 0 1px 5px rgb(119, 136, 153);
         }
         button {
             padding: 5px 100px;
             margin-top: 10px;
             font-size: 1em;
-            color: black;
-            background-color: white;
+            color: white;
+            background-color: #007bff;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
-            box-shadow: 0 1px 5px rgb(0, 0, 0);
+            box-shadow: 0 1px 3px rgb(119, 136, 153);
         }
         .copy-button,
         .screenshot-button {
             padding: 5px 135px;
             margin-top: 10px;
             font-size: 1empx;
-            color: black;
-            background-color: white;
+            color: white;
+            background-color: red;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
-            box-shadow: 0 1px 5px rgb(0, 0, 0);
+            box-shadow: 0 1px 3px rgb(119, 136, 153);
         }
         .copy-button:hover,
         .screenshot-button:hover {
@@ -143,6 +146,7 @@
     <p class="profile-name">Tommy Developer
         <span class="material-symbols-outlined">check_circle</span>
     </p>
+    <hr>
     <pre id="ascii-output"></pre>
     <input type="file" id="image-input" accept="image/*" />
     
@@ -175,6 +179,8 @@
         <input type="range" id="scale-slider" min="50" max="200" value="50" oninput="updateASCII()" />
         <button class="slider-button" onclick="adjustSlider('scale-slider', 5)">+</button>
     </div>
+  <footer>klik generate dan atur ukuran</footer>
+    
     <button onclick="generateASCII()">Generate ASCII</button>
     <button class="copy-button" onclick="copyText()">Copy</button>
     <button onclick="takeScreenshot()">Ambil Gambar</button>
