@@ -3,69 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+
     <title>tommy.developer</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            justify-content: center;
-            height: 95vh;
-            background-color: white;
-            color: #333;
-             padding: 2px 0px;
-            text-align: center;
-            box-shadow: 0 0px 5px rgb(119, 136, 153);
-            border-radius: 20px
-        }
-        .profile-name {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            margin-top: 5px; /* Atur sesuai keinginan */
-            margin-bottom: 5px; /
-            
-        }
-        .profile-name .material-symbols-outlined {
-            font-size: 15px;
-            color: white;
-            margin-left: 0px;
-            background-color: #007bff; 
-            border-radius: 50%;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccdbd7;
+    color: #333;
+    border: 1px solid #89a8c7;
+    border-radius: 5px;
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 95%;
+    height: 97vh; 
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+
         input[type="file"] {
-            display: block;
-            margin: 20px;
-            color: black;
-            width: 88%;
-            padding: 6px 20px;
-            border-radius: 50px;
-            box-shadow: 0 1px 5px rgb(119, 136, 153);
-            background-color: #fff;
-            text-align: center;
-            position: relative;
-            box-sizing: border-box;
+    display: inline-block;
+    width: 290px;
+    margin: 12px;
+    height: 25px;
+    border: 1px solid #89a8c7;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
         }
         .slider-container {
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 6px 0;
         }
         .slider-button {
-            padding: 5px;
+            padding: 0px;
             background-color: white;
             color: black;
-            border: none;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
+            border-radius: 50px;
+            width: 20px;
+            height: 20px;
             font-size: 15px;
             cursor: pointer;
-            margin: 0 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+
         }
         .slider-label {
             position: absolute;
@@ -81,75 +73,62 @@
             height: 5px;
             background: #ddd;
             outline: none;
-            border-radius: 100px;
+            border-radius: 50px;
             overflow: hidden;
         }
         input[type="range"]::-moz-range-thumb:hover {
             background-color: #21a1f1;
         }
-        #ascii-output {
-            margin: 10px;
-            white-space: pre-wrap;
-            font-family: monospace;
-            line-height: 0.3;
-            background-color: white;
-            padding: 0;
-            border-radius: 0;
-            overflow: hidden;
-            height: 38vh;
-            width: 90vw;
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: calc(1vh);
-            box-shadow: 0 1px 5px rgb(119, 136, 153);
-        }
-        button {
-            padding: 5px 100px;
-            margin-top: 10px;
-            font-size: 1em;
-            color: black;
-            background-color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 1px 3px rgb(119, 136, 153);
-        }
-        .copy-button,
-        .screenshot-button {
-            padding: 5px 135px;
-            margin-top: 10px;
-            font-size: 1empx;
-            color: black;
-            background-color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 1px 3px rgb(119, 136, 153);
-        }
-        .copy-button:hover,
-        .screenshot-button:hover {
-            background-color: #007bff;
-        }
+#ascii-output {
+    font-family: monospace;
+    line-height: 0.2;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: calc(50vh - 0px); /* Mengurangi tinggi area */
+    width: calc(85vw - 0px); /* Mengurangi lebar area */
+    font-size: calc(0.3vw); /* Mengecilkan ukuran font */
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+button {
+    display: inline-block;
+    width: 300px;
+    margin: 5px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+}
+
+button:hover {
+    background-color: #dcdcdc;
+    border-color: #888;
+}
+
         footer {
-            margin-top: 15px;
-            font-size: 10px;
+            margin: 15px;
+            font-size: 12px;
             color: #007bff;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-    <p class="profile-name">Tommy Developer
-        <span class="material-symbols-outlined">check_circle</span>
+    <p class="profile-name">IMG/Font ART
     </p>
-    <hr>
     <pre id="ascii-output"></pre>
     <input type="file" id="image-input" accept="image/*" />
-    
+        <canvas id="canvas" style="display:none;"></canvas>
     <!-- Slider untuk mengatur lebar -->
     <div class="slider-container">
         <div class="slider-label">
@@ -182,10 +161,10 @@
   <footer>klik generate dan atur ukuran</footer>
     
     <button onclick="generateASCII()">Generate ASCII</button>
-    <button class="copy-button" onclick="copyText()">Copy</button>
+    <button class="copy-button" onclick="copyText()">Copy Text</button>
     <button onclick="takeScreenshot()">Ambil Gambar</button>
 
-    <canvas id="canvas" style="display:none;"></canvas>
+
 
     <footer>Design Tommy | Versi 1.0</footer>
  <script>
@@ -222,8 +201,8 @@
             const originalHeight = img.height;
             const aspectRatio = originalWidth / originalHeight;
 
-            const width = Math.floor((widthPercent / 100) * originalWidth);
-            const height = Math.floor((heightPercent / 100) * originalWidth / aspectRatio);
+            const width = Math.floor((widthPercent / 800) * originalWidth);
+            const height = Math.floor((heightPercent / 800) * originalWidth / aspectRatio);
 
             canvas.width = width;
             canvas.height = height;
@@ -254,7 +233,7 @@
             }
 
             asciiOutput.textContent = asciiArt; // Menggunakan textContent untuk menampilkan ASCII
-            asciiOutput.style.fontSize = `${scaleValue / 100}em`; // Mengatur ukuran font berdasarkan nilai skala
+            asciiOutput.style.fontSize = `${scaleValue / 200}em`; // Mengatur ukuran font berdasarkan nilai skala
         };
     }
 
