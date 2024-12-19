@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Art Editor</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <title>Image Art Editor</title>
+
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <style>
+
+    
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
-    color: #333;
-    border: 1px solid #89a8c7;
-    border-radius: 5px;
-    text-align: center;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    width: 99
-    6%;
-    height: 97vh; 
-
+            margin: center;
+            width: center;
+            padding: 0;
 }
 
-.profile-name {
+contaier {
+    font-family: Arial, sans-serif;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: left;
+            margin: center;
+            width: center;
+            padding: 0;
+}
+
+.editor-title {
     font-size: 12px;
     font-weight: bold;
-    margin-top: 0.0px;
     color: #023961;
-    text-align: center;
+    margin-left: -17%;
     font-family: 'Orbitron', sans-serif;
-    
+  
 }
 
-hr { 
-  color-black;
-  margin: center;
-}
-
-        input[type="file"] {
+  input[type="file"] {
     display: inline-block;
     width: 310px;
     margin: 15px;
@@ -101,7 +107,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -15px;
+    margin-top: 0px;
 }
 
 
@@ -113,7 +119,7 @@ button {
     border: 1px solid gray;
     border-radius: 5px;
     background-color: #007bff;
-    color: #ffff;
+    color: #ffffff;
     font-size: 12px;
     cursor: pointer;
     text-align: center;
@@ -141,14 +147,85 @@ button:hover {
             font-weight: bold;
             font-family: 'Orbitron', sans-serif;
         }
-        
+
+  /* Gaya media sosial */
+    .social-icons {
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    gap: 16px;
+        }
+
+        .social-icons .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: inherit;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    background-color: inherit;
+    border-color: inherit;
+        }
+
+.social-icons .icon:hover {
+  animation: pulse 1.0s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 0px 1px #ff0000;
+      color: white;
+    border-color: #ff0000;
+     background: #007bff;
+  }
+  50% {
+    transform: scale(0.5);
+    box-shadow: 0px 0px 1px #ff0000;
+  }
+  100% {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 1px #007bff;
+  }
+  }
+hr {
+    display: block;
+    height: 1px;
+    border: none;
+    background-color: #ccc;
+}
+
     </style>
-    
+    </head>
 <body>
-  <div class="profile-name">
-    <p>Image Art Editor</p>
-    <hr>
-  </div>
+<div class="container"></div>
+<div class="profile-name"></div>
+<div class="social-icons" id="socialIconsContainer">
+    <!-- Judul editor -->
+    <div class="editor-title">Image Art Editor</div>
+    
+    <!-- Ikon Instagram -->
+    <div class="icon instagram" id="instagramIcon" onclick="navigateTo('https://tommydev27.github.io/tommy.website3/')">
+        <i class="far fa-image"></i>
+    </div>
+        <div class="icon youtube" id="youtubeIcon" onclick="navigateTo('https://tommydev27.github.io/tm-text/')">
+            <i class="fab fa-buysellads"></i>
+        </div>
+        <div class="icon facebook" id="facebookIcon" onclick="navigateTo('https://tommydev27.github.io/Keyboardtmdev/')">
+            <i class="fas fa-keyboard"></i>
+        </div>
+        <div class="icon twitter" id="twitterIcon" onclick="navigateTo('https://tommydev27.github.io/tommy.website-demo/')">
+            <i class="fab fa-mizuni"></i>
+        </div>
+      </div>
+    </div>
+<div style="height: 1px; background-color: #ccc; width: 100%; margin-bottom:5px;"></div>
+
+
   <pre id="ascii-output"></pre>
   <input type="file" id="image-input" accept="image/*" />
   <canvas id="canvas" style="display:none;"></canvas>
@@ -187,13 +264,14 @@ button:hover {
     <button onclick="generateASCII()">Generate ASCII</button>
     <button class="copy-button" onclick="copyText()">Copy Text</button>
     <button onclick="takeScreenshot()">Ambil Gambar</button>
-
           </div>
-       <div>
+    </div>
     <footer>Tommy Website | Design V.27
       </footer>
-          </div>
-    
+      </div>
+    </div>
+    <div style="height: 1px; background-color: #ccc; width: 100%;"></div>
+
  <script>
     const asciiChars = "@%#*+=-:. ";
 
@@ -284,6 +362,11 @@ button:hover {
             link.click();
         });
     }
+    
+            // **Navigasi Halaman**
+        function navigateTo(url) {
+            window.location.href = url; // Arahkan ke URL tujuan
+        }
 </script>
 
 </body>
