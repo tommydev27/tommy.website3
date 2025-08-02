@@ -18,9 +18,10 @@ body {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-            margin: center;
-            width: center;
-            padding: 0;
+    margin: center;
+    width: center;
+    border-radius: 10px;
+    padding:  30px;
 }
 
 contaier {
@@ -29,18 +30,16 @@ contaier {
     flex-direction: column; 
     align-items: center; 
     text-align: left;
-            margin: center;
-            width: center;
-            padding: 0;
+    margin: center;
+    width: center;
+    padding: 0px;
 }
 
 .editor-title {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
     color: #023961;
-    margin-left: -17%;
-    font-family: 'Orbitron', sans-serif;
-  
+
 }
 
   input[type="file"] {
@@ -55,18 +54,19 @@ contaier {
     font-size: 12px;
     cursor: pointer;
     text-align: center;
-    padding: 0;
+            padding: 10px;
         }
         .slider-container {
             position: relative;
+            color:  #26a9a3;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .slider-button {
             padding: 0px;
-            background-color: white;
-            color: black;
+            background-color:  #26a9a3;
+            color:  #fff;
             border-radius: 50px;
             width: 30px;
             height: 30px;
@@ -76,7 +76,7 @@ contaier {
         }
         .slider-label {
             position: absolute;
-            top: -5px;
+            top: 0px;
             text-align: center;
             font-size: 8px;
             color: black;
@@ -86,28 +86,86 @@ contaier {
         input[type="range"] {
             width: 240px;
             height: 17px;
-            background: #ddd;
             outline: none;
             border-radius: 50px;
             overflow: hidden;
         }
         input[type="range"]::-moz-range-thumb:hover {
-            background-color: #21a1f1;
+            background-color:  #26a9a3;
         }
 #ascii-output {
     font-family: monospace;
     line-height: 0.2;
     background-color: white;
     border-radius: 5px;
-    border: 1px solid #89a8c7;
-            width: 335px;
-            height: 250px; Mengurangi lebar area */
+    border: 1px solid  #26a9a3;
+    width: 335px;
+    height: 250px; Mengurangi lebar area */
     font-size: calc(0.3vw); /* Mengecilkan ukuran font */
     overflow: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 0px;
+}
+
+/* Warna untuk tombol + dan - */
+.slider-button {
+  background-color: #26a9a3;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+.slider-button:hover {
+  background-color: #1f8f89;
+}
+
+/* Gaya container slider */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0px 0;
+}
+
+/* Label slider */
+.slider-label label {
+  color: #26a9a3;
+  font-weight: bold;
+}
+
+/* Slider input */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50px;
+  outline: none;
+
+}
+
+/* Track warna */
+input[type=range]::-webkit-slider-runnable-track {
+  background: #26a9a3;
+  height: 6px;
+  border-radius: 3px;
+}
+
+/* Thumb warna */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #26a9a3;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  margin-top: -5px; /* Untuk center thumb */
 }
 
 
@@ -118,13 +176,12 @@ button {
     height: 30px;
     border: 1px solid gray;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color:  #26a9a3;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 15px;
     cursor: pointer;
     text-align: center;
     padding: 0;
-    font-family: 'Orbitron', sans-serif;
     font-weight: bold;
 }
 
@@ -133,99 +190,21 @@ button:hover {
     border-color: #888;
 }
 
-    footer {
-         margin-top: 15px;
-         font-size: 10px;
-         color: #333;
-         font-weight: bold;
-         font-family: 'Orbitron', sans-serif;
-        }
-        
-          h1 {
-            font-size: 10px;
-            color: #333;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-  /* Gaya media sosial */
-    .social-icons {
-    display: flex;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    gap: 16px;
-        }
-
-        .social-icons .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 17px;
-    height: 17px;
-    border-radius: 5px;
-    font-size: 12px;
-    color: inherit;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-    background-color: inherit;
-    border-color: inherit;
-        }
-
-.social-icons .icon:hover {
-  animation: pulse 1.0s;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 1px #ff0000;
-      color: white;
-    border-color: #ff0000;
-     background: #007bff;
-  }
-  50% {
-    transform: scale(0.5);
-    box-shadow: 0px 0px 1px #ff0000;
-  }
-  100% {
-    transform: scale(1.2);
-    box-shadow: 0px 0px 1px #007bff;
-  }
-  }
-hr {
-    display: block;
-    height: 1px;
-    border: none;
-    background-color: #ccc;
-}
-
-    </style>
+h1 {
+   font-size: 12px;
+   color: #5a5a5a;
+    font-weight: bold;
+   }
+   
+</style>
+    
     </head>
 <body>
 <div class="container"></div>
 <div class="profile-name"></div>
 <div class="social-icons" id="socialIconsContainer">
-    <!-- Judul editor -->
-    <div class="editor-title">Image Art Editor</div>
     
-    <!-- Ikon Instagram -->
-    <div class="icon instagram" id="instagramIcon" onclick="navigateTo('https://tommydev27.github.io/tommy.website3/')">
-        <i class="far fa-image"></i>
     </div>
-        <div class="icon youtube" id="youtubeIcon" onclick="navigateTo('https://tommydev27.github.io/tm-text/')">
-            <i class="fab fa-buysellads"></i>
-        </div>
-        <div class="icon facebook" id="facebookIcon" onclick="navigateTo('https://tommydev27.github.io/Keyboardtmdev/')">
-            <i class="fas fa-keyboard"></i>
-        </div>
-        <div class="icon twitter" id="twitterIcon" onclick="navigateTo('https://tommydev27.github.io/tommy.website-demo/')">
-            <i class="fab fa-mizuni"></i>
-        </div>
-      </div>
-    </div>
-<div style="height: 1px; background-color: #ccc; width: 100%; margin-bottom:5px;"></div>
-
-
   <pre id="ascii-output"></pre>
   <input type="file" id="image-input" accept="image/*" />
   <canvas id="canvas" style="display:none;"></canvas>
@@ -266,11 +245,7 @@ hr {
     <button onclick="takeScreenshot()">Ambil Gambar</button>
           </div>
     </div>
-    <footer>Tommy Website | Design V.27
-      </footer>
-      </div>
-    </div>
-    <div style="height: 1px; background-color: #ccc; width: 100%;"></div>
+
 
  <script>
     const asciiChars = "@%#*+=-:. ";
