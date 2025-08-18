@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,35 +11,43 @@
   <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
-    <style>
-
+        </head>
+   <style>
     
 body {
     font-family: Arial, sans-serif;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    margin: center;
-    width: center;
     border-radius: 10px;
-    padding:  30px;
+    background: #333;
+    padding: 0px;
+    border: 1px solid #777;
+
+    width: 100%;       /* ganti ini */
+    max-width: 340px;  /* biar tidak melebar */
+    margin: 0 auto;    /* biar center */
 }
 
-contaier {
+.container {
     font-family: Arial, sans-serif;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    text-align: left;
-    margin: center;
-    width: center;
+    text-align: center;
+    background: #222;
+    color: #fff;
     padding: 0px;
+
+    width: 100%;       /* ganti ini */
+    max-width: 340px;  /* biar konsisten */
+    margin: 0 auto;    /* biar center */
 }
 
 .editor-title {
     font-size: 18px;
     font-weight: bold;
-    color: #023961;
+    color: #fff;
 
 }
 
@@ -47,10 +56,10 @@ contaier {
     width: 310px;
     margin: 15px;
     height: 20px;
-            border: 1px solid #3333;
+            border: 0.5px solid #777;
     border-radius: 5px;
-    background-color: #f0f0f0;
-    color: gray;
+    background-color: #222;
+    color: #fff;
     font-size: 12px;
     cursor: pointer;
     text-align: center;
@@ -58,14 +67,14 @@ contaier {
         }
         .slider-container {
             position: relative;
-            color:  #26a9a3;
+            color:  #fff;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .slider-button {
             padding: 0px;
-            background-color:  #26a9a3;
+            background-color:  #7a0208;
             color:  #fff;
             border-radius: 50px;
             width: 30px;
@@ -79,7 +88,7 @@ contaier {
             top: 0px;
             text-align: center;
             font-size: 8px;
-            color: black;
+            color: #222;
             width: 100%;
             left: 0;
         }
@@ -96,9 +105,10 @@ contaier {
 #ascii-output {
     font-family: monospace;
     line-height: 0.2;
-    background-color: white;
+                color: #fff;
+    background-color: #222;
     border-radius: 5px;
-    border: 1px solid  #26a9a3;
+    border: 1px solid  #777;
     width: 335px;
     height: 250px; Mengurangi lebar area */
     font-size: calc(0.3vw); /* Mengecilkan ukuran font */
@@ -111,9 +121,9 @@ contaier {
 
 /* Warna untuk tombol + dan - */
 .slider-button {
-  background-color: #26a9a3;
-  color: white;
-  border: none;
+  background-color: #7a0208;
+  color: ;
+  border: 0.5px solid #777;
   padding: 5px;
   border-radius: 50px;
   cursor: pointer;
@@ -122,7 +132,7 @@ contaier {
 }
 
 .slider-button:hover {
-  background-color: #1f8f89;
+  background-color: #a60041;
 }
 
 /* Gaya container slider */
@@ -135,7 +145,7 @@ contaier {
 
 /* Label slider */
 .slider-label label {
-  color: #26a9a3;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -145,14 +155,16 @@ input[type=range] {
   appearance: none;
   border-radius: 50px;
   outline: none;
+  background: none;
 
 }
 
 /* Track warna */
 input[type=range]::-webkit-slider-runnable-track {
-  background: #26a9a3;
+  background: #7a0208;
   height: 6px;
   border-radius: 3px;
+  border: 0.5px solid white;
 }
 
 /* Thumb warna */
@@ -161,7 +173,7 @@ input[type=range]::-webkit-slider-thumb {
   appearance: none;
   width: 16px;
   height: 16px;
-  background: #26a9a3;
+  background: #888;
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid white;
@@ -174,10 +186,10 @@ button {
     width: 335px;
     margin: 5px;
     height: 30px;
-    border: 1px solid gray;
+    border: 0.5px solid #777;
     border-radius: 5px;
-    background-color:  #26a9a3;
-    color: #ffffff;
+    background-color:  #7a0208;
+    color: #fff;
     font-size: 15px;
     cursor: pointer;
     text-align: center;
@@ -192,15 +204,24 @@ button:hover {
 
 h1 {
    font-size: 12px;
-   color: #5a5a5a;
+   color: #fff;
     font-weight: bold;
    }
    
+    header{padding:5px 0px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center; font-family:Normal; margin-left: -100px;}
+    header h1{font-size:16px;margin:0;font-weight:700; color:#fff; }
+    header .badge{font-size:11px;color:#02c302; background:#0a0a0a;border:1px solid #123a18;padding:2px 6px;border-radius:999px}
+    
 </style>
     
-    </head>
+
+
 <body>
 <div class="container"></div>
+   <header>
+    <h1>Catatan</h1>
+    <span class="badge">font • icon • unicode character</span>
+  </header>
 <div class="profile-name"></div>
 <div class="social-icons" id="socialIconsContainer">
     
