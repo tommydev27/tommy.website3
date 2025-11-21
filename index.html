@@ -20,9 +20,9 @@ body {
     flex-direction: column; 
     align-items: center; 
     border-radius: 10px;
-    background: #333;
-    padding: 0px;
-    border: 1px solid #777;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
 
     width: 100%;       /* ganti ini */
     max-width: 340px;  /* biar tidak melebar */
@@ -47,7 +47,7 @@ body {
 .editor-title {
     font-size: 18px;
     font-weight: bold;
-    color: #fff;
+    color: #333;
 
 }
 
@@ -56,9 +56,9 @@ body {
     width: 310px;
     margin: 15px;
     height: 20px;
-            border: 0.5px solid #777;
+            border: 0.5px solid #ccc;
     border-radius: 5px;
-    background-color: #222;
+    background-color: #888;
     color: #fff;
     font-size: 12px;
     cursor: pointer;
@@ -67,14 +67,14 @@ body {
         }
         .slider-container {
             position: relative;
-            color:  #fff;
+            color:  #333;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .slider-button {
             padding: 0px;
-            background-color:  #7a0208;
+            background-color:  #3989ff;
             color:  #fff;
             border-radius: 50px;
             width: 30px;
@@ -105,10 +105,10 @@ body {
 #ascii-output {
     font-family: monospace;
     line-height: 0.2;
-                color: #fff;
-    background-color: #222;
+                color: #333;
+    background-color: #fff;
     border-radius: 5px;
-    border: 1px solid  #777;
+    border: 1px solid  #ccc;
     width: 335px;
     height: 250px; Mengurangi lebar area */
     font-size: calc(0.3vw); /* Mengecilkan ukuran font */
@@ -121,9 +121,9 @@ body {
 
 /* Warna untuk tombol + dan - */
 .slider-button {
-  background-color: #7a0208;
+  background-color: #3989ff;
   color: ;
-  border: 0.5px solid #777;
+  border: 0.5px solid #ccc;
   padding: 5px;
   border-radius: 50px;
   cursor: pointer;
@@ -145,7 +145,7 @@ body {
 
 /* Label slider */
 .slider-label label {
-  color: #fff;
+  color: #333;
   font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ input[type=range] {
 
 /* Track warna */
 input[type=range]::-webkit-slider-runnable-track {
-  background: #7a0208;
+  background: #3989ff;
   height: 6px;
   border-radius: 3px;
   border: 0.5px solid white;
@@ -186,9 +186,9 @@ button {
     width: 335px;
     margin: 5px;
     height: 30px;
-    border: 0.5px solid #777;
+    border: 0.5px solid #ccc;
     border-radius: 5px;
-    background-color:  #7a0208;
+    background-color:  #3989ff;
     color: #fff;
     font-size: 15px;
     cursor: pointer;
@@ -204,13 +204,13 @@ button:hover {
 
 h1 {
    font-size: 12px;
-   color: #fff;
+   color: #333;
     font-weight: bold;
    }
    
     header{padding:5px 0px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center; font-family:Normal; margin-left: -20px;}
-    header h1{font-size:16px;margin:0;font-weight:700; color:#fff; }
-    header .badge{font-size:11px;color:#02c302; background:#0a0a0a;border:1px solid #123a18;padding:2px 6px;border-radius:999px}
+    header h1{font-size:16px;margin:0;font-weight:700; color:#333; }
+    header .badge{font-size:11px;color:#66f985; background:#444;padding:2px 6px;border-radius:999px}
     
 </style>
     
@@ -259,7 +259,7 @@ h1 {
         <input type="range" id="scale-slider" min="50" max="200" value="50" oninput="updateASCII()" />
         <button class="slider-button" onclick="adjustSlider('scale-slider', 5)">+</button>
     </div>
-  <h1>klik generate dan atur ukuran</h1>
+  <h1 >klik generate dan atur ukuran</h1>
     
     <button onclick="generateASCII()">Generate ASCII</button>
     <button class="copy-button" onclick="copyText()">Copy Text</button>
